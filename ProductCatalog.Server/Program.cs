@@ -15,14 +15,15 @@ app.MapStaticAssets();
 if (app.Environment.IsDevelopment())
 {
 	app.MapOpenApi();
+	app.UseSwaggerUI(options =>
+	{
+		options.SwaggerEndpoint(url: "/openapi/v1.json", name: "v1");
+	});
 }
 
 app.UseHttpsRedirection();
-
 app.UseAuthorization();
-
 app.MapControllers();
-
 app.MapFallbackToFile("/index.html");
 
 app.Run();
