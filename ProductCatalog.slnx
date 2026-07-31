@@ -2,7 +2,7 @@
   <Folder Name="/Tests/">
     <Project Path="Tests/ProductCatalog.Server.UnitTests/ProductCatalog.Server.UnitTests.csproj" />
   </Folder>
-  <Project Path="productcatalog.client/productcatalog.client.esproj">
+  <Project Path="ProductCatalog.Client/ProductCatalog.Client.esproj">
     <Build />
     <Deploy />
   </Project>
