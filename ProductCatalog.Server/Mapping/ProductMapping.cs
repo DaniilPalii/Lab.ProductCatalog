@@ -5,7 +5,7 @@ namespace ProductCatalog.Server.Mapping;
 
 public static class ProductMapping
 {
-	public static Product ToEntity(this AddProductDto dto, Guid id)
+	public static Product ToEntity(this AddProductDto dto, long id)
 	{
 		return new Product
 		{

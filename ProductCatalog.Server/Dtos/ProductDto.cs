@@ -1,7 +1,7 @@
 namespace ProductCatalog.Server.Dtos;
 
 public record ProductDto(
-	Guid Id,
+	long Id,
 	string Name,
 	string Code,
 	decimal Price);

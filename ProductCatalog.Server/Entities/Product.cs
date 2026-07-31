@@ -2,7 +2,7 @@ namespace ProductCatalog.Server.Entities;
 
 public class Product
 {
-	public Guid Id { get; set; }
+	public long Id { get; set; }
 
 	public required string Name { get; set; }
 

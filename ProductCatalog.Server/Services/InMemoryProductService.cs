@@ -5,15 +5,20 @@ using ProductCatalog.Server.Mapping;
 
 namespace ProductCatalog.Server.Services;
 
+/// <summary>
+/// An in-memory thread-safe implementation of <see cref="IProductService"/>.
+/// </summary>
 public class InMemoryProductService : IProductService
 {
-	private readonly ConcurrentDictionary<Guid, Product> products = new();
+	private readonly ConcurrentDictionary<long, Product> products = new();
+	private long lastId;
 
 	public ProductDto Add(AddProductDto dto)
 	{
-		var product = dto.ToEntity(id: Guid.NewGuid());
+		var id = Interlocked.Increment(ref lastId);
+		var product = dto.ToEntity(id);
 
-		products.TryAdd(product.Id, product);
+		products.TryAdd(id, product);
 
 		return product.ToDto();
 	}
