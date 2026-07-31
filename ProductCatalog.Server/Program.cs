@@ -15,6 +15,7 @@ app.MapStaticAssets();
 if (app.Environment.IsDevelopment())
 {
 	app.MapOpenApi();
+
 	app.UseSwaggerUI(options =>
 	{
 		options.SwaggerEndpoint(url: "/openapi/v1.json", name: "v1");

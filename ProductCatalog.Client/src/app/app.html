@@ -1,36 +1,35 @@
 ﻿<h1 id="tableLabel">Weather forecast</h1>
 
 @switch (forecasts.status()) {
-  @case ('loading') {
-    <p>Loading...</p>
-  }
-  @case ('resolved') {
-    <table>
-      <thead>
-      <tr>
-        <th>Date</th>
-        <th>Temp. (C)</th>
-        <th>Temp. (F)</th>
-        <th>Summary</th>
-      </tr>
-      </thead>
-      <tbody>
-        @for (forecast of forecasts.value(); track forecast.date)
-        {
-          <tr>
-            <td>{{ forecast.date }}</td>
-            <td>{{ forecast.temperatureC }}</td>
-            <td>{{ forecast.temperatureF }}</td>
-            <td>{{ forecast.summary }}</td>
-          </tr>
-        }
-      </tbody>
-    </table>
-  }
-  @case ('error') {
-    <div class="error">
-      <p>Failed to load.</p>
-      <pre>{{ forecasts.error()?.message }}</pre>
-    </div>
-  }
+	@case ('loading') {
+		<p>Loading...</p>
+	}
+	@case ('resolved') {
+		<table>
+			<thead>
+				<tr>
+					<th>Date</th>
+					<th>Temp. (C)</th>
+					<th>Temp. (F)</th>
+					<th>Summary</th>
+				</tr>
+			</thead>
+			<tbody>
+				@for (forecast of forecasts.value(); track forecast.date) {
+					<tr>
+						<td>{{ forecast.date }}</td>
+						<td>{{ forecast.temperatureC }}</td>
+						<td>{{ forecast.temperatureF }}</td>
+						<td>{{ forecast.summary }}</td>
+					</tr>
+				}
+			</tbody>
+		</table>
+	}
+	@case ('error') {
+		<div class="error">
+			<p>Failed to load.</p>
+			<pre>{{ forecasts.error()?.message }}</pre>
+		</div>
+	}
 }

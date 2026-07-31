@@ -1,10 +1,10 @@
 <Solution>
-  <Folder Name="/Tests/">
-    <Project Path="Tests/ProductCatalog.Server.UnitTests/ProductCatalog.Server.UnitTests.csproj" />
-  </Folder>
-  <Project Path="ProductCatalog.Client/ProductCatalog.Client.esproj">
-    <Build />
-    <Deploy />
-  </Project>
-  <Project Path="ProductCatalog.Server/ProductCatalog.Server.csproj" />
+	<Folder Name="/Tests/">
+		<Project Path="Tests/ProductCatalog.Server.UnitTests/ProductCatalog.Server.UnitTests.csproj"/>
+	</Folder>
+	<Project Path="ProductCatalog.Client/ProductCatalog.Client.esproj">
+		<Build/>
+		<Deploy/>
+	</Project>
+	<Project Path="ProductCatalog.Server/ProductCatalog.Server.csproj"/>
 </Solution>

@@ -7,7 +7,7 @@ public static class ProductMapping
 {
 	public static Product ToEntity(this AddProductDto dto, long id)
 	{
-		return new Product
+		return new()
 		{
 			Id = id,
 			Code = dto.Code,
@@ -18,11 +18,11 @@ public static class ProductMapping
 
 	public static ProductDto ToDto(this Product entity)
 	{
-		return new ProductDto(
-			Id: entity.Id,
-			Name: entity.Name,
-			Code: entity.Code,
-			Price: entity.Price
+		return new(
+			entity.Id,
+			entity.Name,
+			entity.Code,
+			entity.Price
 		);
 	}
 }
