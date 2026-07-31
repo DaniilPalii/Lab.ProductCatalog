@@ -11,8 +11,7 @@ interface WeatherForecast {
 @Component({
   selector: 'app-root',
   templateUrl: './app.html',
-  standalone: false,
-  styleUrl: './app.css'
+  styleUrl: './app.css',
 })
 export class App {
   readonly forecasts = httpResource<WeatherForecast[]>(() => '/weatherforecast');
