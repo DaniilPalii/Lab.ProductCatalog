@@ -1,18 +1,12 @@
-import { httpResource } from '@angular/common/http';
 import { Component } from '@angular/core';
-
-interface WeatherForecast {
-	date: string;
-	temperatureC: number;
-	temperatureF: number;
-	summary: string;
-}
+import { ProductListComponent } from './components/product-list/product-list.component';
 
 @Component({
 	selector: 'app-root',
 	templateUrl: './app.html',
 	styleUrl: './app.css',
+	imports: [
+		ProductListComponent
+	]
 })
-export class App {
-	readonly forecasts = httpResource<WeatherForecast[]>(() => '/weatherforecast');
-}
+export class App { }

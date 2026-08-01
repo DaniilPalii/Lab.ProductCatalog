@@ -1,0 +1,63 @@
+<section class="product-list">
+	<h2>Products</h2>
+
+	@if (isLoading()) {
+		<p>Loading products…</p>
+	} @else if (error()) {
+		<p>Failed to load products.</p>
+		<button type="button" (click)="reload()">Retry</button>
+	} @else {
+		<table>
+			<thead>
+				<tr>
+					<th>Code</th>
+					<th>Name</th>
+					<th>Price</th>
+				</tr>
+			</thead>
+			<tbody>
+				@for (product of products(); track product.id) {
+					<tr>
+						<td>{{ product.code }}</td>
+						<td>{{ product.name }}</td>
+						<td>{{ product.price | currency: 'PLN' : 'code' }}</td>
+					</tr>
+				} @empty {
+					<tr>
+						<td colspan="3">No products yet.</td>
+					</tr>
+				}
+			</tbody>
+		</table>
+	}
+
+	<h3>Add product</h3>
+	<form (ngSubmit)="add()">
+		<input
+			name="code"
+			placeholder="Code"
+			required
+			[(ngModel)]="code"
+		/>
+		<input
+			name="name"
+			placeholder="Name"
+			required
+			[(ngModel)]="name"
+		/>
+		<input
+			name="price"
+			type="number"
+			placeholder="Price"
+			required
+			[(ngModel)]="price"
+		/>
+		<button type="submit" [disabled]="isSaving()">
+			{{ isSaving() ? 'Saving…' : 'Add' }}
+		</button>
+
+		@if (saveError()) {
+			<p>{{ saveError() }}</p>
+		}
+	</form>
+</section>

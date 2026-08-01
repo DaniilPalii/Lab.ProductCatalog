@@ -5,7 +5,7 @@ using ProductCatalog.Server.Services;
 namespace ProductCatalog.Server.Controllers;
 
 [ApiController]
-[Route("product")]
+[Route("/api/products")]
 public class ProductController(IProductService productService) : ControllerBase
 {
 	[HttpGet]
