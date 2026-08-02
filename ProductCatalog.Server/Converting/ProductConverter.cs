@@ -1,17 +1,17 @@
 using ProductCatalog.Server.Dtos;
 using ProductCatalog.Server.Entities;
 
-namespace ProductCatalog.Server.Mapping;
+namespace ProductCatalog.Server.Converting;
 
-public static class ProductMapping
+public static class ProductConverter
 {
 	public static Product ToEntity(this AddProductDto dto, long id)
 	{
 		return new()
 		{
 			Id = id,
-			Code = dto.Code,
-			Name = dto.Name,
+			Code = dto.Code.Trim(),
+			Name = dto.Name.Trim(),
 			Price = dto.Price,
 		};
 	}

@@ -1,7 +1,7 @@
 using System.Collections.Concurrent;
+using ProductCatalog.Server.Converting;
 using ProductCatalog.Server.Dtos;
 using ProductCatalog.Server.Entities;
-using ProductCatalog.Server.Mapping;
 
 namespace ProductCatalog.Server.Services;
 
