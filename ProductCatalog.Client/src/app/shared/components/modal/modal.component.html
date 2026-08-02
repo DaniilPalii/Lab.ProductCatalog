@@ -1,9 +1,15 @@
 @if (isVisible()) {
 	<div class="modal-overlay" (click)="close()">
 		<div class="modal-content" (click)="$event.stopPropagation()">
-			<h2>{{ title() }}</h2>
-			<button (click)="close()">Close</button>
-			<div>
+			<h2 class="modal-title">{{ title() }}</h2>
+			<button
+				class="modal-close-button"
+				(click)="close()"
+				title="Close">
+				&times;
+			</button>
+
+			<div class="modal-body">
 				<ng-content/>
 			</div>
 		</div>

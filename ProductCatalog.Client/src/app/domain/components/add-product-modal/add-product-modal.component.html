@@ -7,19 +7,18 @@
 		<input
 			formControlName="code"
 			placeholder="Code"
-			required
-		/>
+			required/>
+
 		<input
 			formControlName="name"
 			placeholder="Name"
-			required
-		/>
+			required/>
+
 		<input
 			formControlName="price"
 			type="number"
 			placeholder="Price"
-			required
-		/>
+			required/>
 
 		@if (saveError()) {
 			<p>{{ saveError() }}</p>
@@ -29,6 +28,7 @@
 			<button type="submit" [disabled]="isSaving()">
 				{{ isSaving() ? 'Saving…' : 'Add' }}
 			</button>
+
 			<button (click)="close()">Cancel</button>
 		</div>
 	</form>
