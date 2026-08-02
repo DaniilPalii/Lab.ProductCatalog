@@ -1,8 +1,8 @@
 import { Component, inject, model, signal } from '@angular/core';
 import { FormGroup, FormControl, ReactiveFormsModule } from '@angular/forms';
-import { ModalComponent } from '@app/shared/modal/modal.component';
 import { AddProductDto } from '@app/models/add-product.model';
 import { ProductService } from '@app/services/product.service';
+import { ModalComponent } from '@app/shared/components/modal/modal.component';
 
 @Component({
 	selector: 'app-add-product-modal',
