@@ -31,7 +31,7 @@
 			<button
 				class="app-button app-primary-button"
 				type="submit"
-				[disabled]="isSaving()">
+				[disabled]="isSaving() || form.invalid">
 
 				{{ isSaving() ? 'Saving…' : 'Add' }}
 			</button>

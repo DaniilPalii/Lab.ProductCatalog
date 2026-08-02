@@ -1,8 +1,9 @@
 import { Component, inject, model, signal } from '@angular/core';
-import { FormGroup, FormControl, ReactiveFormsModule } from '@angular/forms';
+import { NonNullableFormBuilder, Validators, ReactiveFormsModule } from '@angular/forms';
 import { AddProductDto } from '@app/models/add-product.model';
 import { ProductService } from '@app/services/product.service';
 import { ModalComponent } from '@app/shared/components/modal/modal.component';
+import { nonWhitespaceValidator } from '@app/shared/validators/nonWhitespaceValidator';
 
 @Component({
 	selector: 'app-add-product-modal',
@@ -15,11 +16,12 @@ import { ModalComponent } from '@app/shared/components/modal/modal.component';
 })
 export class AddProductModalComponent {
 	private readonly productService = inject(ProductService);
+	private readonly nonNullableFormBuilder = inject(NonNullableFormBuilder);
 
-	public readonly form = new FormGroup({
-		code: new FormControl(''),
-		name: new FormControl(''),
-		price: new FormControl<number | null>(null),
+	public readonly form = this.nonNullableFormBuilder.group({
+		code: ['', [Validators.required, nonWhitespaceValidator()]],
+		name: ['', [Validators.required, nonWhitespaceValidator()]],
+		price: this.nonNullableFormBuilder.control<number | null>(null, [Validators.required, Validators.min(0)]),
 	});
 
 	public readonly isSaving = signal(false);
@@ -28,18 +30,15 @@ export class AddProductModalComponent {
 	public isVisible = model<boolean>(false);
 
 	public async submit(): Promise<void> {
-		const price = this.form.value.price;
-		const code = this.form.value.code;
-		const name = this.form.value.name;
+		const { code, name, price } = this.form.value;
 
-		if (!code || !name || price == null) {
+		if (!code || !name || price == null)
 			return;
-		}
 
 		const dto: AddProductDto = {
-			code: code,
-			name: name,
-			price: price,
+			code: code.trim(),
+			name: name.trim(),
+			price: price
 		};
 
 		this.isSaving.set(true);
