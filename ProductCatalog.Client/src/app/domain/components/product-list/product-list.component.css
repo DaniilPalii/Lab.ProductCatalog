@@ -11,13 +11,4 @@
 	h2 {
 		margin-top: 0;
 	}
-
-	button {
-		padding: 0.5rem 0.75rem;
-		border-radius: 6px;
-		border: none;
-		background: var(--primary-color);
-		color: #fff;
-		cursor: pointer;
-	}
 }

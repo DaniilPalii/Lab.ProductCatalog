@@ -5,7 +5,7 @@
 		<p>Loading products…</p>
 	} @else if (error()) {
 		<p>Failed to load products.</p>
-		<button type="button" (click)="reload()">Retry</button>
+		<button class="app-button" type="button" (click)="reload()">Retry</button>
 	} @else {
 		<table class="app-table product-list-table">
 			<thead>
@@ -32,7 +32,11 @@
 	}
 
 	<div class="app-button-group">
-		<button (click)="openAddProductModal()">Add Product</button>
+		<button
+			class="app-button app-primary-button"
+			(click)="openAddProductModal()">
+			Add Product
+		</button>
 	</div>
 
 	<app-add-product-modal [(isVisible)]="isAddProductModalVisible"/>
