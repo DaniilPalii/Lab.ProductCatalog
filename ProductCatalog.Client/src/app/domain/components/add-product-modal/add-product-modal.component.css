@@ -1,7 +1,37 @@
 :host ::ng-deep .modal-content .add-product-form {
 	max-width: 480px;
 	margin: 0 auto;
+	display: grid;
+	grid-template-columns: min-content 1fr;
+	gap: 0.75rem 1rem;
+	align-items: center;
+}
+
+:host ::ng-deep .modal-content .form-row {
+	display: contents;
+}
+
+:host ::ng-deep .modal-content .form-label {
+	justify-self: end;
+	padding-right: 0.5rem;
+	white-space: nowrap;
+}
+
+:host ::ng-deep .modal-content .app-input {
+	width: 100%;
+	box-sizing: border-box;
+	padding: 0.5rem 0.75rem;
+}
+
+:host ::ng-deep .modal-content .app-button-group {
+	grid-column: 1 / -1;
 	display: flex;
-	flex-direction: column;
-	gap: 0.75rem;
+	gap: 0.5rem;
+	margin-top: 0.5rem;
+}
+
+:host ::ng-deep .modal-content .save-error {
+	grid-column: 1 / -1;
+	color: var(--app-error-color, #c00);
+	margin: 0;
 }

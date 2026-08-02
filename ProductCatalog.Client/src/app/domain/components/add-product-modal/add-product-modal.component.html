@@ -2,49 +2,35 @@
 	i18n-title="@@addProductTitle"
 	title="Add Product"
 	[(isVisible)]="isVisible"
-	(close)="close()"
->
+	(close)="close()">
+
 	<form class="add-product-form" [formGroup]="form" (ngSubmit)="submit()">
-		<input
-			class="app-input"
-			formControlName="name"
-			placeholder="Name"
-			i18n-placeholder="@@placeholderName"
-			required/>
 
-		<input
-			class="app-input"
-			formControlName="code"
-			placeholder="Code"
-			i18n-placeholder="@@placeholderCode"
-			required/>
+		<div class="form-row">
+			<label for="name" class="form-label" i18n="@@labelName">Name</label>
+			<input id="name" class="app-input" formControlName="name" required />
+		</div>
 
-		<input
-			class="app-input"
-			formControlName="price"
-			type="number"
-			placeholder="Price"
-			i18n-placeholder="@@placeholderPrice"
-			required/>
+		<div class="form-row">
+			<label for="code" class="form-label" i18n="@@labelCode">Code</label>
+			<input id="code" class="app-input" formControlName="code" required />
+		</div>
+
+		<div class="form-row">
+			<label for="price" class="form-label" i18n="@@labelPrice">Price</label>
+			<input id="price" class="app-input" formControlName="price" type="number" required />
+		</div>
 
 		@if (saveError()) {
-			<p>{{ saveError() }}</p>
+			<p class="save-error">{{ saveError() }}</p>
 		}
 
 		<div class="app-button-group">
-			<button
-				class="app-button app-primary-button"
-				type="submit"
-				[disabled]="isSaving() || form.invalid">
-
+			<button class="app-button app-primary-button" type="submit" [disabled]="isSaving() || form.invalid">
 				{{ addButtonLabel }}
 			</button>
 
-			<button
-				class="app-button"
-				(click)="close()"
-				i18n="@@cancelButton">
-
+			<button class="app-button" (click)="close()" i18n="@@cancelButton">
 				Cancel
 			</button>
 		</div>

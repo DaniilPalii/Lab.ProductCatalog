@@ -1,16 +1,19 @@
 :root {
-	--background-color: rgb(249 250 252);
-	--text-color: rgb(34 38 43);
-	--text-color-inverted: rgb(254 254 254);
-	--primary-color: rgb(26 184 79);
-	--border-color: rgb(202 202 202);
+	--app-background-color: rgb(249 250 252);
+	--app-text-color: rgb(34 38 43);
+	--app-text-color-inverted: rgb(254 254 254);
+	--app-primary-color: rgb(26 184 79);
+	--app-border-color: rgb(202 202 202);
+	--app-error-color: rgb(156 0 0);
 
 	--border-radius: 8px;
+
+	--lable-font-weight: 600px;
 }
 
 body {
-	background: var(--background-color);
-	color: var(--text-color);
+	background: var(--app-background-color);
+	color: var(--app-text-color);
 	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, serif;
 	font-size: 16px;
 	margin: 0;
@@ -21,11 +24,11 @@ body {
 	padding: 0.5rem 0.75rem;
 	border-radius: var(--border-radius);
 	border: none;
-	font-weight: 600;
+	font-weight: var(--lable-font-weight);
 
 	&.app-primary-button {
-		background-color: var(--primary-color);
-		color: var(--background-color);
+		background-color: var(--app-primary-color);
+		color: var(--app-background-color);
 	}
 
 	&[disabled],
@@ -36,7 +39,7 @@ body {
 
 	&[type="button"] {
 		background: transparent;
-		border: 1px solid var(--border-color);
+		border: 1px solid var(--app-border-color);
 	}
 }
 
@@ -50,22 +53,26 @@ body {
 .app-input {
 	width: 100%;
 	padding: 0.5rem 0.75rem;
-	border: 1px solid var(--border-color);
+	border: 1px solid var(--app-border-color);
 	border-radius: var(--border-radius);
-	color: var(--text-color);
+	color: var(--app-text-color);
 	background: #fff;
+}
+
+.app-label {
+	font-weight: var(--lable-font-weight);
 }
 
 .app-table {
 	border-collapse: collapse;
 	border-radius: var(--border-radius);
 	overflow: hidden;
-	box-shadow: 0 0 0 1px var(--border-color);
+	box-shadow: 0 0 0 1px var(--app-border-color);
 	margin-top: 0.75rem;
 	background: #fff;
 
 	th {
-		border-bottom: 1px solid var(--border-color);
+		border-bottom: 1px solid var(--app-border-color);
 	}
 
 	th, td {
