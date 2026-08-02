@@ -1,4 +1,5 @@
 <app-modal
+	i18n-title="@@addProductTitle"
 	title="Add Product"
 	[(isVisible)]="isVisible"
 	(close)="close()"
@@ -8,12 +9,14 @@
 			class="app-input"
 			formControlName="name"
 			placeholder="Name"
+			i18n-placeholder="@@placeholderName"
 			required/>
 
 		<input
 			class="app-input"
 			formControlName="code"
 			placeholder="Code"
+			i18n-placeholder="@@placeholderCode"
 			required/>
 
 		<input
@@ -21,6 +24,7 @@
 			formControlName="price"
 			type="number"
 			placeholder="Price"
+			i18n-placeholder="@@placeholderPrice"
 			required/>
 
 		@if (saveError()) {
@@ -33,12 +37,13 @@
 				type="submit"
 				[disabled]="isSaving() || form.invalid">
 
-				{{ isSaving() ? 'Saving…' : 'Add' }}
+				{{ addButtonLabel }}
 			</button>
 
 			<button
 				class="app-button"
-				(click)="close()">
+				(click)="close()"
+				i18n="@@cancelButton">
 
 				Cancel
 			</button>

@@ -27,6 +27,10 @@ export class AddProductModalComponent {
 	public readonly isSaving = signal(false);
 	public readonly saveError = signal<string | null>(null);
 
+	public get addButtonLabel(): string {
+		return this.isSaving() ? $localize`:@@savingLabel:Saving…` : $localize`:@@addLabel:Add`;
+	}
+
 	public isVisible = model<boolean>(false);
 
 	public async submit(): Promise<void> {
@@ -48,7 +52,7 @@ export class AddProductModalComponent {
 			await this.productService.add(dto);
 			this.close();
 		} catch {
-			this.saveError.set('Could not add product. Please try again.');
+			this.saveError.set($localize`:@@addProductError:Could not add product. Please try again.`);
 		} finally {
 			this.isSaving.set(false);
 		}

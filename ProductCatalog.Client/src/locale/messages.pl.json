@@ -1,0 +1,21 @@
+{
+  "productCatalog": "Katalog produktów",
+  "loadingProducts": "Ładowanie produktów…",
+  "failedLoadProducts": "Nie udało się załadować produktów.",
+  "retryButton": "Ponów próbę",
+  "tableHeaderName": "Nazwa",
+  "tableHeaderCode": "Kod",
+  "tableHeaderPrice": "Cena",
+  "noProducts": "Brak produktów.",
+  "addProductButton": "Dodaj produkt",
+  "addProductTitle": "Dodaj produkt",
+  "placeholderName": "Nazwa",
+  "placeholderCode": "Kod",
+  "placeholderPrice": "Cena",
+  "cancelButton": "Anuluj",
+  "savingLabel": "Zapisywanie…",
+  "addLabel": "Dodaj",
+  "addProductError": "Nie można dodać produktu. Spróbuj ponownie.",
+  "closeButton": "Zamknij",
+  "appTitle": "Katalog produktów"
+}
