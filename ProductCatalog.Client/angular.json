@@ -11,10 +11,12 @@
 			"projectType": "application",
 			"schematics": {
 				"@schematics/angular:component": {
-					"standalone": true
+					"standalone": true,
+					"type": "component"
 				},
 				"@schematics/angular:directive": {
-					"standalone": true
+					"standalone": true,
+					"type": "directive"
 				},
 				"@schematics/angular:pipe": {
 					"standalone": true

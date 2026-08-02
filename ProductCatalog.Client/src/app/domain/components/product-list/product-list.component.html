@@ -31,33 +31,10 @@
 		</table>
 	}
 
-	<h3>Add product</h3>
-	<form (ngSubmit)="add()">
-		<input
-			name="code"
-			placeholder="Code"
-			required
-			[(ngModel)]="code"
-		/>
-		<input
-			name="name"
-			placeholder="Name"
-			required
-			[(ngModel)]="name"
-		/>
-		<input
-			name="price"
-			type="number"
-			placeholder="Price"
-			required
-			[(ngModel)]="price"
-		/>
-		<button type="submit" [disabled]="isSaving()">
-			{{ isSaving() ? 'Saving…' : 'Add' }}
-		</button>
+	<div>
+		<button (click)="openAddProductModal()">Add Product</button>
+	</div>
 
-		@if (saveError()) {
-			<p>{{ saveError() }}</p>
-		}
-	</form>
+	<app-add-product-modal [(isVisible)]="isAddProductModalVisible"/>
+
 </section>

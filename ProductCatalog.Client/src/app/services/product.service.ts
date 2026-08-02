@@ -1,8 +1,8 @@
 import { Service } from '@angular/core';
 import { inject } from '@angular/core';
 import { HttpClient, httpResource } from '@angular/common/http';
-import { AddProductDto } from '../models/add-product.model';
-import { Product } from '../models/product.model';
+import { AddProductDto } from '@app/models/add-product.model';
+import { Product } from '@app/models/product.model';
 import { firstValueFrom } from "rxjs";
 
 @Service()
