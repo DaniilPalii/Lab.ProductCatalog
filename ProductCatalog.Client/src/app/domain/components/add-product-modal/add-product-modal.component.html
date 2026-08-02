@@ -1,7 +1,6 @@
 <app-modal
 	title="Add Product"
 	[(isVisible)]="isVisible"
-	(submit)="submit()"
 	(close)="close()"
 >
 	<form [formGroup]="form" (ngSubmit)="submit()">
@@ -21,12 +20,16 @@
 			placeholder="Price"
 			required
 		/>
-		<button type="submit" [disabled]="isSaving()">
-			{{ isSaving() ? 'Saving…' : 'Add' }}
-		</button>
 
 		@if (saveError()) {
 			<p>{{ saveError() }}</p>
 		}
+
+		<div>
+			<button type="submit" [disabled]="isSaving()">
+				{{ isSaving() ? 'Saving…' : 'Add' }}
+			</button>
+			<button (click)="close()">Cancel</button>
+		</div>
 	</form>
 </app-modal>

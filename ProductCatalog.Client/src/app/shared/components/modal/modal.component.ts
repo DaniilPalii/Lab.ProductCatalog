@@ -8,13 +8,8 @@ import { Component, input, model, output } from '@angular/core';
 export class ModalComponent {
 	public title = input.required<string>();
 	public isVisible = model<boolean>(false);
-	public submitted = output<void>();
 
 	public close(): void {
 		this.isVisible.set(false);
-	}
-
-	public submit(): void {
-		this.submitted.emit();
 	}
 }
