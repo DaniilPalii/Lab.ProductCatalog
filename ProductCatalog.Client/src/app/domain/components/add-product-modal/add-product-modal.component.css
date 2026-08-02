@@ -1,0 +1,7 @@
+:host ::ng-deep .modal-content .add-product-form {
+	max-width: 480px;
+	margin: 0 auto;
+	display: flex;
+	flex-direction: column;
+	gap: 0.75rem;
+}

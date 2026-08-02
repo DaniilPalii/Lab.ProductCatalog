@@ -1,5 +1,5 @@
 <section class="product-list">
-	<h2>Products</h2>
+	<h2>Product Catalog</h2>
 
 	@if (isLoading()) {
 		<p>Loading products…</p>
@@ -7,20 +7,20 @@
 		<p>Failed to load products.</p>
 		<button type="button" (click)="reload()">Retry</button>
 	} @else {
-		<table>
+		<table class="app-table product-list-table">
 			<thead>
 				<tr>
-					<th>Code</th>
 					<th>Name</th>
+					<th>Code</th>
 					<th>Price</th>
 				</tr>
 			</thead>
 			<tbody>
 				@for (product of products(); track product.id) {
 					<tr>
-						<td>{{ product.code }}</td>
 						<td>{{ product.name }}</td>
-						<td>{{ product.price | currency: 'PLN' : 'code' }}</td>
+						<td>{{ product.code }}</td>
+						<td>{{ product.price | currency: 'PLN' }}</td>
 					</tr>
 				} @empty {
 					<tr>
@@ -31,7 +31,7 @@
 		</table>
 	}
 
-	<div>
+	<div class="app-button-group">
 		<button (click)="openAddProductModal()">Add Product</button>
 	</div>
 
