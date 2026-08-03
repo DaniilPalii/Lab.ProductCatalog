@@ -23,8 +23,6 @@ Simply run the server project from your IDE (Visual Studio, Rider, or VS Code wi
 - **Rider**: Click "Run" or press `Shift+F10`
 - **VS Code**: Run the `.NET: Debug` configuration
 
-The IDE will automatically run both the backend server and the Angular development server. The frontend will be served alongside the backend.
-
 ### Option 2: Running from Console
 
 #### Start the Backend
@@ -33,12 +31,7 @@ cd ProductCatalog.Server
 dotnet run
 ```
 
-#### Start the Frontend (in a separate terminal)
-```bash
-cd ProductCatalog.Client
-npm install  # Only needed on first run or after dependencies change
-npm start
-```
+Dotnet will automatically run both the backend server and the Angular development server. The frontend will be served alongside the backend.
 
 ## Access the Application
 
